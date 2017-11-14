@@ -12,6 +12,8 @@ ArrayList<Product> bill = new ArrayList<Product>();
 void draw()
 {
   displayProducts();
+  displayBill();
+  
 }
 void loadData()
 {
@@ -30,15 +32,12 @@ void printProducts()
     println(p.price);
   }
 }
+
 void displayProducts()
 {
-  
-  
   float border = width *0.1f;
-  //float range = 7;
   float y = height - border;
   float x = border + 50;
-  //stroke(0);
   textSize(16);
   //p.price.toString();
  // float dispPrice = nf(p.price,1,2);
@@ -58,6 +57,22 @@ void displayProducts()
     //text(dispPrice, x , y , x + 40, y - 25);
     
     
+  }
+}
+void displayBill()
+{
+  float border = width *0.1f;
+  float y = border + 60;
+  float x = border + 350;
+  fill(255);
+  rect(x, y, 300, 400);
+  for(Product p:bill)
+  {
+    textSize(16);
+    fill(0);
+    text(p.name,x,y, x + 25, y+20);
+    x = x + 20;
+    y = y + 15;
   }
 }
 void mousePressed()
